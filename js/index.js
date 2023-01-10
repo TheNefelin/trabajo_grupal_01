@@ -18,6 +18,11 @@ function cargarComponente(id) {
             $(".contenedor").load("./componente/contacto.html .contacto");
             break;
     }
+
+    var btnMenu_click = document.querySelector(".navBar-btn");
+    if (window.getComputedStyle(btnMenu_click).display != "none") {
+        btnMenu()
+    }
 }
 
 function getCarruselItem() {
@@ -48,6 +53,27 @@ function getLinks() {
     });
 
     listaLinks.innerHTML = newElement;
+}
+
+let navBarBtn_click = true;
+
+function btnMenu() {
+    var navBarBtn = document.querySelector(".navBar-btn").children;
+    var navBarMenu = document.querySelector(".navBar-menu");
+
+    if (navBarBtn_click) {
+        for (i=0; i<navBarBtn.length; i++){
+            navBarBtn[i].classList.add("navBar-btn_div_accion");
+        }
+        navBarMenu.classList.add("navBar-menu_accion");
+        navBarBtn_click = false;
+    }else{
+        for (i=0; i<navBarBtn.length; i++){
+            navBarBtn[i].classList.remove("navBar-btn_div_accion");
+        }
+        navBarMenu.classList.remove("navBar-menu_accion");
+        navBarBtn_click = true;
+    }
 }
 
 function reloj() {

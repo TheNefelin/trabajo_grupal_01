@@ -65,7 +65,7 @@ header {
 }
 
 .navBar-btn-div {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     height: 5px;
     width: 30px;
     margin: auto;
@@ -90,7 +90,7 @@ header {
         justify-content: center;
         padding: 15px;
         background-color: rgb(34, 72, 129);
-        top: 110px;
+        top: 60px;
         width: 100%;
         left: 100%;
         transition: 0.5s;
@@ -151,8 +151,8 @@ header {
 footer {
     position: fixed;
     bottom: 0;
-    width: 100%;
     z-index: 10;
+    width: 100%;
 }
 
 .reloj {
