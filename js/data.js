@@ -3,23 +3,23 @@ const dataLinks = [
         id: 1,
         url: "https://html-css-js.com/js/",
         nombre: "html-css-js cheats"
-    },
-    {
+    }
+    ,{
         id: 2,
         url: "https://devtooly.com/",
         nombre: "devtooly"
-    },
-    {
+    }
+    ,{
         id: 3,
         url: "https://wwwhatsnew.com/2021/01/22/7-plataformas-web-para-aprender-css-jugando/",
         nombre: "7 Plataformas web para aprender CSS jugando"
-    },
-    {
+    }
+    ,{
         id: 4,
         url: "https://www.freecodecamp.org/espanol/news/los-mejores-juegos-online-para-aprender-programar/",
         nombre: "9 Plataformas web para aprender programar jugando"
-    },
-    {
+    }
+    ,{
         id: 5,
         url: "https://lab.reaal.me/jsrobot/",
         nombre: "js Robot"
@@ -28,23 +28,23 @@ const dataLinks = [
         id: 6,
         url: "https://codecombat.com/",
         nombre: "Code Combat"
-    },
-    {
+    }
+    ,{
         id: 7,
         url: "https://reactjs.org/docs/create-a-new-react-app.html",
         nombre: "React"
-    },
-    {
+    }
+    ,{
         id: 8,
         url: "https://otec-unab.cl/login/index.php",
         nombre: "otec-unab"
-    },
-    {
+    }
+    ,{
         id: 9,
         url: "https://github.com/",
         nombre: "GitHub"
-    },
-    {
+    }
+    ,{
         id: 10,
         url: "https://www.youtube.com/watch?v=rLoWMU4L_qE",
         nombre: "Curso React"
@@ -53,8 +53,8 @@ const dataLinks = [
         id: 11,
         url: "https://freeasphosting.net/",
         nombre: "Free ASP Hosting"
-    },
-    {
+    }
+    ,{
         id: 12,
         url: "https://slifer.bsite.net/index.html",
         nombre: "Api"
@@ -63,13 +63,13 @@ const dataLinks = [
         id: 13,
         url: "https://react-icons.github.io/react-icons",
         nombre: "Icons"
-    },
-    {
+    }
+    ,{
         id: 14,
         url: "https://learntheweb.courses/topics/css-layout-cheat-sheet/",
         nombre: "CSS"
-    },
-    {
+    }
+    ,{
         id: 15,
         url: "https://www.shopify.com/es/blog/62615749-14-generadores-de-paletas-de-color-online-para-diseno-web",
         nombre: "14 generadores de Paleta de Colores"
@@ -78,16 +78,31 @@ const dataLinks = [
         id: 16,
         url: "https://pixabay.com/es/",
         nombre: "pixabay"
-    },
-    {
+    }
+    ,{
         id: 17,
         url: "https://3dtransforms.desandro.com/",
         nombre: "CSS 3D"
-    },
-    {
+    }
+    ,{
         id: 18,
         url: "https://platzi.com/tutoriales/1229-css-grid-layout/6653-todo-lo-que-necesitas-saber-de-css-grid/",
         nombre: "CSS Grid"
+    }
+    ,{
+        id: 19,
+        url: "https://image-map.net",
+        nombre: "Image Map"
+    }
+    ,{
+        id: 20,
+        url: "https://platzi.com/blog/7-juegos-css-grid-y-flexbox/",
+        nombre: "7 Juegos CSS Grid y Flexbox"
+    }
+    ,{
+        id: 21,
+        url: "https://training.github.com/downloads/es_ES/github-git-cheat-sheet.pdf",
+        nombre: "Git Cheat Sheet"
     }
 ];
 

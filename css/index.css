@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color:  rgb(84, 84, 84);
+    background-color:  rgb(235, 235, 235);
 }
 
 /* NavBar -------------------------------------------------------------------------- */
@@ -32,7 +32,7 @@ header {
     justify-content: space-between;
     height: 60px;
     min-width: 310px;
-    background: #181818;
+    background: #212121;
     color: white;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.152);
 }
@@ -73,7 +73,9 @@ header {
 }
 
 .navBar-menu > *:hover {
-    color: red
+    color: red;
+    font-size: 120%;
+    transition: border-color 0.66s ease-out, font-size 0.3s ease-out;
 }
 
 @media (max-width: 576px) {
@@ -115,7 +117,7 @@ header {
     margin: 0 auto;
 }
 
-/* Contacto --------------------------------------------------------------------------- */
+/* Contacto ------------------------------------------------------------------------ */
 /* --------------------------------------------------------------------------------- */
 .contacto {
     background-color: var(--colorContenedor);

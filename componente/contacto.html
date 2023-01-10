@@ -9,20 +9,32 @@
 <body>
     
     <form class="contacto contacto-frm">
+        
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <input id="txtContactoEmail" type="email" class="form-control" aria-describedby="emailHelp" required>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" required>
+            <input id="txtContactoNombre" type="text" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
-        <input type="submit" class="btn btn-primary"></input>
+        <input
+            id="btnContacto" 
+            type="button" 
+            class="btn btn-primary" 
+            variant="primary" 
+            size="lg" 
+            value="Eviar" 
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+            onclick="msge(this)">
+        </input>
+
     </form>    
 
 </body>

@@ -8,20 +8,31 @@
 </head>
 <body>
     <form class="encuesta" action="#">
+        
         <h1>Evalúanos!!!</h1>
         <div>
-            <ol>
+            <ul>
                <li>0 a 1 = Malo</li>
                <li>2 a 3 = Malo</li>
                <li>4 a 5 = Malo</li>
                <li>6 a 7 = Malo</li>
                <li>8 a 9 = Malo</li>
                <li>10 = Malo</li>
-            </ol>
+            </ul>
         </div>
-        <input type="text" name="evaluacion" placeholder="Ingrese un valor entre 0 y 10" required>
-        <input type="submit" class="btn btn-primary" variant="primary" size="lg" value="Evaluar"></input>
-        <label class="msge"></label>
+        <input id="txtEncuesta" type="text" name="evaluacion" placeholder="Ingrese un valor entre 0 y 10" required>
+        <input 
+            id="btnEncuesta"
+            type="button" 
+            class="btn btn-primary" 
+            variant="primary" 
+            size="lg" 
+            value="Evaluar" 
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+            onclick="msge(this)">
+        </input>
+
     </form>
 </body>
 </html>

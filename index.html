@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <link rel="icon" href="./img/logo.png">
         <link rel="stylesheet" href="./bootstrap-5.3.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="./css/normalize.css">
@@ -14,6 +13,7 @@
     </head>
     <body>
 
+        <!-- Menu ---------------------------------------------------------------------- -->
         <header>
             <nav class="navBar">
                 <div class="navBar-item" onclick="cargarComponente(1)">
@@ -34,20 +34,38 @@
             </nav>
         </header>
 
-        <!-- --------------------------------------------------------------------------- -->
-       
-       
-        <!-- --------------------------------------------------------------------------- -->
-
         <main class="contenedor">
-        </main>        
+        <!-- --------------------------------------------------------------------------- -->
+        <!-- Aqui se Cargan todos los componentes de las Paginas -->
+        <!-- --------------------------------------------------------------------------- -->
+        </main>
+
+        <!-- Modal --------------------------------------------------------------------- -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Mensaje</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------------------------------------------------- -->
 
         <footer>
             <div class="reloj"></div>
         </footer>
 
         <script src="./bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
-        <script src="https://npmcdn.com/flickity@1.1.2/dist/flickity.pkgd.min.js"></script>
+        <script
+            src="https://npmcdn.com/flickity@1.1.2/dist/flickity.pkgd.min.js"></script>
         <script src="./js/jquery-3.6.3.min.js"></script>
         <script src="./js/data.js"></script>
         <script src="./js/index.js"></script>

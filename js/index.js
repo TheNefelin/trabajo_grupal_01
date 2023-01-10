@@ -1,3 +1,5 @@
+// -- Manejo de Navegacion ---------------------------------------------------------
+// ---------------------------------------------------------------------------------
 function cargarComponente(id) {
     switch (id){
         case 1 :
@@ -10,7 +12,7 @@ function cargarComponente(id) {
             $(".contenedor").load("./componente/encuesta.html .encuesta");
             break;
         case 3:
-            $('.contenedor').load("./componente/links.html", function() {
+            $('.contenedor').load("./componente/links.html", () => {
                 getLinks();
             });
             break;
@@ -19,12 +21,15 @@ function cargarComponente(id) {
             break;
     }
 
+    // -- Si se linkea una pagina y el menu hamburguesa esta visible, se ocultara
     var btnMenu_click = document.querySelector(".navBar-btn");
     if (window.getComputedStyle(btnMenu_click).display != "none") {
         btnMenu()
     }
 }
 
+// -- Manejo de Navegacion - Render Carrusel (Tienda -------------------------------
+// ---------------------------------------------------------------------------------
 function getCarruselItem() {
     var listaCarrusel = document.querySelector("#galeria");
     var newElement = "";
@@ -44,6 +49,8 @@ function getCarruselItem() {
     listaCarrusel.innerHTML = newElement;
 }
 
+// -- Manejo de Navegacion - Render Links (Paltas) ---------------------------------
+// ---------------------------------------------------------------------------------
 function getLinks() {
     var listaLinks = document.querySelector(".links");
     var newElement = '<a href="#" class="list-group-item list-group-item-action active" aria-current="true">Links Útiles</a>';
@@ -55,6 +62,8 @@ function getLinks() {
     listaLinks.innerHTML = newElement;
 }
 
+// -- Manejo btn Menu Hamburguesa --------------------------------------------------
+// ---------------------------------------------------------------------------------
 let navBarBtn_click = true;
 
 function btnMenu() {
@@ -76,6 +85,8 @@ function btnMenu() {
     }
 }
 
+// -- Reloj ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 function reloj() {
     var hora = new Date;
     var reloj = document.querySelector(".reloj");
@@ -90,6 +101,67 @@ setInterval(() => {
     reloj();
 }, 1000);
 
+// -- Manejo de Mensajeria ---------------------------------------------------------
+// ---------------------------------------------------------------------------------
+function msge(btn_clic) {
+    let modal = document.querySelector(".modal-body");
+    let msg = "";
+
+    console.dir(btn_clic.id);
+
+    if (btn_clic.id == "btnEncuesta"){
+        msg = msge_Encuesta();
+    }else if (btn_clic.id == "btnContacto"){
+        msg = msge_Contacto();
+    }
+
+    modal.innerHTML = msg;
+}
+
+function msge_Encuesta() {
+    let txtEncuesta = document.querySelector("#txtEncuesta");
+    let txt = "";
+
+    if (isNaN(txtEncuesta.value) || txtEncuesta.value == ''){
+        txt = "Debe Ingresar una Valor Numérico";
+        $(txtEncuesta).css('border-color', 'red'); 
+    }else{
+        if (txtEncuesta.value > 10) {
+            txt = "El Valor Debe ser Entre 0 y 10";
+            $(txtEncuesta).css('border-color', 'red'); 
+        }else{
+            txt = "Gracias por Darnos tu Opinión";
+            txtEncuesta.value = "";
+        }       
+    }
+
+    return txt
+};
+
+function msge_Contacto() {
+    let txtEmail = document.querySelector("#txtContactoEmail");
+    let txtNombre = document.querySelector("#txtContactoNombre");
+    let txt = "";
+
+    console.log(txtEmail.value);
+
+    if (txtEmail.value == ""){
+        txt = "Debe Ingresar un EMail";
+    }else{
+        if (txtNombre.value == "") {
+            txt = "Debe Ingresar su Nombre";
+        }else{
+            txt = "Gracias por Contactarnos!!!";
+            txtEmail.value = "";
+            txtNombre.value = "";
+        }
+    }
+
+    return txt;
+}
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 let scrY = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -103,3 +175,5 @@ window.addEventListener("scroll", () => {
 
     scrY = window.scrollY;
 });
+
+ 
