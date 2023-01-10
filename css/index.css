@@ -1,0 +1,164 @@
+/* Fuentes ------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url("../fuente/Roboto-Light.ttf");
+}
+
+:root {
+    --colorContenedor: rgb(242, 242, 242);
+    --colorFooter: rgb(143, 0, 0);
+}
+
+* {
+    font-family: Roboto-Light;
+}
+
+body {
+    background-color:  rgb(84, 84, 84);
+}
+
+/* NavBar -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    min-width: 310px;
+    background: #181818;
+    color: white;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.152);
+}
+
+.navBar img {
+    height: 40px;
+}
+
+.navBar-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navBar-item > * {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navBar-btn {
+    display: none;
+    min-width: 45px;
+    margin: 10px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+
+.navBar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.navBar-btn-div {
+    background-color: white;
+    height: 5px;
+    width: 30px;
+    margin: auto;
+    margin-top: 6px;
+}
+
+.navBar-menu > *:hover {
+    color: red
+}
+
+@media (max-width: 576px) {
+    .navBar-btn {
+        display: block;
+    }
+    .navBar-btn_div_accion {
+        background-color: red;
+    }
+
+    .navBar-menu {
+        position: fixed;
+        display: grid;
+        justify-content: center;
+        padding: 15px;
+        background-color: rgb(34, 72, 129);
+        top: 110px;
+        width: 100%;
+        left: 100%;
+        transition: 0.5s;
+    }
+
+    .navBar-menu_accion {
+        left: 0;
+    }
+
+    .navBar-menu > * {
+        margin: 5px;
+    }
+}
+
+/* MainContenedor ------------------------------------------------------------------ */
+/* --------------------------------------------------------------------------------- */
+.contenedor  {
+    display: grid;
+    justify-items: center;
+    max-width: 1200px;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+
+/* Contacto --------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+.contacto {
+    background-color: var(--colorContenedor);
+    padding: 20px;
+
+}
+
+/* Encuesta ------------------------------------------------------------------------ */
+/* --------------------------------------------------------------------------------- */
+.encuesta {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorContenedor);
+    border-radius: 5px;
+}
+
+.encuesta >  * {
+    margin: 5px 30px ;
+}
+
+/* Links --------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+.links {
+    background-color: var(--colorContenedor);
+    width: 80%;
+}
+
+/* Tienda -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+
+/* Footer -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.reloj {
+    background-color: var(--colorFooter);
+    color: white;
+    padding: 10px;
+}
+
+/* ------------------- */
