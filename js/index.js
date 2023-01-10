@@ -19,6 +19,9 @@ function cargarComponente(id) {
         case 4:
             $(".contenedor").load("./componente/contacto.html .contacto");
             break;
+        case 5:
+            $(".contenedor").load("./componente/testing.html #testing");
+            break;
     }
 
     // -- Si se linkea una pagina y el menu hamburguesa esta visible, se ocultara
