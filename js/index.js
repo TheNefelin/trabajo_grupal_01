@@ -107,8 +107,6 @@ function msge(btn_clic) {
     let modal = document.querySelector(".modal-body");
     let msg = "";
 
-    console.dir(btn_clic.id);
-
     if (btn_clic.id == "btnEncuesta"){
         msg = msge_Encuesta();
     }else if (btn_clic.id == "btnContacto"){
@@ -142,8 +140,6 @@ function msge_Contacto() {
     let txtEmail = document.querySelector("#txtContactoEmail");
     let txtNombre = document.querySelector("#txtContactoNombre");
     let txt = "";
-
-    console.log(txtEmail.value);
 
     if (txtEmail.value == ""){
         txt = "Debe Ingresar un EMail";
