@@ -2,8 +2,13 @@
 /* --------------------------------------------------------------------------------- */
 
 @font-face {
-    font-family: Roboto-Light;
-    src: url("../fuente/Roboto-Light.ttf");
+    font-family: fuente-titulot;
+    src: url("../fuente/Caveat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: fuente-sitio;
+    src: url("../fuente/Merriweather-Regular.ttf");
 }
 
 :root {
@@ -20,7 +25,7 @@
 }
 
 * {
-    font-family: Roboto-Light;
+    font-family: fuente-sitio;
 }
 
 body {
@@ -53,6 +58,10 @@ header {
 
 .navBar img {
     height: 40px;
+}
+
+.navBar h2 {
+    font-family: fuente-titulot;
 }
 
 .navBar-item {
