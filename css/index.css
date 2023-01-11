@@ -121,6 +121,11 @@ header {
     }
 }
 
+.dropdown-item_desactivarBS {
+    text-shadow: none;
+}
+
+
 /* MainContenedor ------------------------------------------------------------------ */
 /* --------------------------------------------------------------------------------- */
 .contenedor  {
@@ -131,33 +136,49 @@ header {
 /* Contacto ------------------------------------------------------------------------ */
 /* --------------------------------------------------------------------------------- */
 .contacto {
-    max-width: 800px;
-    background-color: var(--colorContenedor);
+    background-color: var(--colorCajaFondo);
+    border: solid 1px var(--colorCajaBorde);
+    color: var(--colorCajaTexto);
+    max-width: 400px;
+    margin: 100px auto 0 auto;
     padding: 20px;
-    margin: auto;
+}
+
+.contacto > * {
+    display: grid;
 }
 
 /* Encuesta ------------------------------------------------------------------------ */
 /* --------------------------------------------------------------------------------- */
 .encuesta {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--colorContenedor);
-    border-radius: 5px;
-    max-width: 500px;
-    margin: auto;
+    background-color: var(--colorCajaFondo);
+    border: solid 1px var(--colorCajaBorde);
+    color: var(--colorCajaTexto);
+    max-width: 400px;
+    margin: 100px auto 0 auto;
+    padding: 20px;
 }
 
 .encuesta >  * {
-    margin: 5px 30px ;
+    display: grid;
+}
+
+.encuesta-lista {
+    background-color: var(--colorCajaFondo);
 }
 
 /* Links --------------------------------------------------------------------------- */
 /* --------------------------------------------------------------------------------- */
 .links {
-    margin: auto;
-    background-color: var(--colorContenedor);
-    width: 80%;
+    margin: 80px auto 0 auto;
+    padding: 20px;
+}
+
+.links > * {
+    background-color: var(--colorCajaFondo);
+    border: solid 1px var(--colorCajaBorde);
+    color: var(--colorCajaTexto);
+    padding: 10px;
 }
 
 /* Tienda -------------------------------------------------------------------------- */
@@ -225,7 +246,6 @@ header {
 
 .tarjetaTextos {
     color: var(--colorCajaTexto);
-
 }
 
 .btnX {
@@ -233,6 +253,11 @@ header {
     color: var(--colorCajaTexto);
     padding: 10px;
     margin: 10px;
+    transition: .2s ease-in-out;
+}
+
+.btnX:hover {
+    transform: scale(1.1);
 }
 
 @media (min-width: 750px) {

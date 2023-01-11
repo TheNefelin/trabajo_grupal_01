@@ -7,7 +7,35 @@
     <title>Encuesta</title>
 </head>
 <body>
-    <form class="encuesta" action="#">
+   
+    <form class="encuesta">
+        <h1>Evalúanos!!!</h1>
+        <div>
+            <ul class="encuesta-lista">
+                <li>0 a 1 = Muy Deficiente</li>
+                <li>2 a 3 = Insucifiente</li>
+                <li>4 a 5 = Suficiente</li>
+                <li>6 a 7 = Bien</li>
+                <li>8 a 9 = Notable</li>
+                <li>10 = Sobresaliente</li>
+             </ul>
+        </div>
+        <div>
+            <label>Nombre</label>
+            <input id="txtEncuesta" type="text" required>
+        </div>
+        <input
+            id="btnEncuesta" 
+            type="button" 
+            class="btnX" 
+            value="Enviar" 
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+            onclick="msge(this)">
+       </input>
+    </form>
+    
+    <!-- <form class="encuesta" action="#">
         
         <h1>Evalúanos!!!</h1>
         <div>
@@ -33,6 +61,6 @@
             onclick="msge(this)">
         </input>
 
-    </form>
+    </form> -->
 </body>
 </html>

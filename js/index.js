@@ -1,12 +1,14 @@
+// -- Inicializar Sitio ------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+window.onload = () => {
+    cargarComponente(1);
+    console.log("Sitio iniciado");
+}
+
 // -- Manejo de Navegacion ---------------------------------------------------------
 // ---------------------------------------------------------------------------------
 function cargarComponente(id) {
     switch (id){
-        case -1:
-            $('.contenedor').load("./componente/tienda.html", () => {
-                getProductos();
-            });
-            break;
         case 1:
             $('.contenedor').load("./componente/tienda.html", () => {
                 getProductos();
@@ -25,9 +27,8 @@ function cargarComponente(id) {
             break;
     }
 
-    // -- Si se linkea una pagina y el menu hamburguesa esta visible, se ocultara
-    var btnMenu_click = document.querySelector(".navBar-btn");
-    if (id != 0 && window.getComputedStyle(btnMenu_click).display != "none") {
+    // -- Despues de click al Link, el Menu se Ocultara
+    if (!navBarBtn_click) {
         btnMenu()
     }
 }
@@ -39,13 +40,13 @@ function getProductos(){
     var newElement = ""
 
     dataProductos.map((d, index) => {   
-        newElement = newElement + '<div key=' + index + ' class="tarjeta">';
-        newElement = newElement + '<img src="' + d.link + '" alt="">';
-        newElement = newElement + '<div class="tarjetaTextos">';
-        newElement = newElement + '<h3><strong>' + d.nombre + '</strong></h3>';
-        newElement = newElement + '<p>' + d.descripcion + '</p>';
-        newElement = newElement + '<p><strong>$ ' + d.precio + '</strong></p>';
-        newElement = newElement + '<button class="btnX">Agregar</button></div></div>';
+        newElement = newElement + `<div key=${index} class="tarjeta">`;
+        newElement = newElement + `<img src="${d.link}" alt="">`;
+        newElement = newElement + `<div class="tarjetaTextos">`;
+        newElement = newElement + `<h3><strong>${d.nombre}</strong></h3>`;
+        newElement = newElement + `<p>${d.descripcion}</p>`;
+        newElement = newElement + `<p><strong>$ ${d.precio}</strong></p>`;
+        newElement = newElement + `<button class="btnX">Agregar</button></div></div>`;
     });
 
     listaProductos.innerHTML = newElement;
@@ -55,10 +56,10 @@ function getProductos(){
 // ---------------------------------------------------------------------------------
 function getLinks() {
     var listaLinks = document.querySelector(".links");
-    var newElement = '<a href="#" class="list-group-item list-group-item-action active" aria-current="true">Links Útiles</a>';
+    var newElement = "";
 
     dataLinks.map((d, index) => {
-        newElement = newElement + '<a key=' + d.id + ' href=' + d.url + ' target="_blank" class="list-group-item list-group-item-action">' + d.nombre + '</a>';
+        newElement = newElement + `<a key=${index} href='${d.url}' target="_blank" class="list-group-item list-group-item-action">${d.nombre}</a>`;
     });
 
     listaLinks.innerHTML = newElement;
@@ -106,6 +107,8 @@ function msge_Encuesta() {
     let txtEncuesta = document.querySelector("#txtEncuesta");
     let txt = "";
 
+    $(txtEncuesta).css('border-color', 'black'); 
+
     if (isNaN(txtEncuesta.value) || txtEncuesta.value == ''){
         txt = "Debe Ingresar una Valor Numérico";
         $(txtEncuesta).css('border-color', 'red'); 
@@ -126,12 +129,17 @@ function msge_Contacto() {
     let txtEmail = document.querySelector("#txtContactoEmail");
     let txtNombre = document.querySelector("#txtContactoNombre");
     let txt = "";
+    
+    $(txtEmail).css('border-color', 'black'); 
+    $(txtNombre).css('border-color', 'black'); 
 
     if (txtEmail.value == ""){
         txt = "Debe Ingresar un EMail";
+        $(txtEmail).css('border-color', 'red'); 
     }else{
         if (txtNombre.value == "") {
             txt = "Debe Ingresar su Nombre";
+            $(txtNombre).css('border-color', 'red'); 
         }else{
             txt = "Gracias por Contactarnos!!!";
             txtEmail.value = "";
@@ -159,6 +167,10 @@ window.addEventListener("scroll", () => {
     }
 
     scrY = window.scrollY;
+
+    if (!navBarBtn_click) {
+        btnMenu()
+    }
 });
 
 // -- Reloj ------------------------------------------------------------------------
