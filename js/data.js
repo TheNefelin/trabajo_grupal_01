@@ -104,6 +104,11 @@ const dataLinks = [
         url: "https://training.github.com/downloads/es_ES/github-git-cheat-sheet.pdf",
         nombre: "Git Cheat Sheet"
     }
+    ,{
+        id: 22,
+        url: "https://www.w3schools.com/howto/",
+        nombre: "How To"
+    }
 ];
 
 const banner = [
@@ -130,41 +135,76 @@ const dataProductos = [
         nombre: "Polera Negra",
         precio: 4990,
         descripcion: "Un manjar, siempre esta en oferta porque nadie la compra",
-        link: "../img/P01.jpg"
+        link: "../img/ropa_01.jpg"
     }
     ,{
         id: 2,
         nombre: "Polera Roja",
         precio: 4990,
         descripcion: "mmm si, la polera es mas o menos... salva porque no se la comen los ratones",
-        link: "../img/P02.jpg"
+        link: "../img/ropa_02.jpg"
     }
     ,{
         id: 3,
         nombre: "Polera Blanca",
         precio: 4990,
         descripcion: "Esta polera hace que la gente se sienta limpia",
-        link: "../img/P03.jpg"
+        link: "../img/ropa_03.jpg"
     }
     ,{
         id: 4,
         nombre: "Akatsuki",
         precio: 25000,
         descripcion: "Si te gusta el Maruchan, este es tu outfit",
-        link: "../img/P04.jpg"
+        link: "../img/ropa_04.jpg"
     }
     ,{
         id: 5,
         nombre: "Cosplay Duende",
         precio: 2000,
         descripcion: "Verte riduculo nunca ha sido tan barato",
-        link: "../img/P05.jpg"
+        link: "../img/ropa_05.jpg"
     }
     ,{
         id: 6,
         nombre: "Cosplay Geisha",
         precio: 11000,
         descripcion: "Para que sientas una persona libre",
-        link: "../img/P06.jpg"
+        link: "../img/ropa_06.jpg"
+    }
+    ,    {
+        id: 7,
+        nombre: "Polera Negra",
+        precio: 4990,
+        descripcion: "Un manjar, siempre esta en oferta porque nadie la compra",
+        link: "../img/ropa_07.jpg"
+    }
+    ,{
+        id: 8,
+        nombre: "Polera Roja",
+        precio: 4990,
+        descripcion: "mmm si, la polera es mas o menos... salva porque no se la comen los ratones",
+        link: "../img/ropa_08.jpg"
+    }
+    ,{
+        id: 9,
+        nombre: "Polera Blanca",
+        precio: 4990,
+        descripcion: "Esta polera hace que la gente se sienta limpia",
+        link: "../img/ropa_09.jpg"
+    }
+    ,{
+        id: 10,
+        nombre: "Akatsuki",
+        precio: 25000,
+        descripcion: "Si te gusta el Maruchan, este es tu outfit",
+        link: "../img/ropa_10.jpg"
+    }
+    ,{
+        id: 11,
+        nombre: "Cosplay Duende",
+        precio: 2000,
+        descripcion: "Verte riduculo nunca ha sido tan barato",
+        link: "../img/ropa_11.jpg"
     }
 ];

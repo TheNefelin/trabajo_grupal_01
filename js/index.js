@@ -2,11 +2,15 @@
 // ---------------------------------------------------------------------------------
 function cargarComponente(id) {
     switch (id){
-        case 1 :
-            $(".contenedor").load("./componente/tienda.html #carrusel");
-            // $('.contenedor').load("./componente/tienda.html", function() {
-            //     getCarruselItem();
-            // });
+        case -1:
+            $('.contenedor').load("./componente/tienda.html", () => {
+                getProductos();
+            });
+            break;
+        case 1:
+            $('.contenedor').load("./componente/tienda.html", () => {
+                getProductos();
+            });
             break;
         case 2:
             $(".contenedor").load("./componente/encuesta.html .encuesta");
@@ -19,37 +23,32 @@ function cargarComponente(id) {
         case 4:
             $(".contenedor").load("./componente/contacto.html .contacto");
             break;
-        case 5:
-            $(".contenedor").load("./componente/testing.html #testing");
-            break;
     }
 
     // -- Si se linkea una pagina y el menu hamburguesa esta visible, se ocultara
     var btnMenu_click = document.querySelector(".navBar-btn");
-    if (window.getComputedStyle(btnMenu_click).display != "none") {
+    if (id != 0 && window.getComputedStyle(btnMenu_click).display != "none") {
         btnMenu()
     }
 }
 
-// -- Manejo de Navegacion - Render Carrusel (Tienda -------------------------------
+// -- Carga Productios en Tienda - Render Tarjetas ---------------------------------
 // ---------------------------------------------------------------------------------
-function getCarruselItem() {
-    var listaCarrusel = document.querySelector("#galeria");
-    var newElement = "";
+function getProductos(){
+    var listaProductos = document.querySelector(".tarjetaContenedor");
+    var newElement = ""
 
-    dataProductos.map((d, index) => {
-        newElement = newElement + '<div class="gallery-cell">';
-        newElement = newElement + '<div class="cont_libro_sup"> <img src="' + d.url + '" alt=""> </div>';
-        newElement = newElement + '<div class="cont_libro_back">';
-        newElement = newElement + '<div class="cont_detalles_lib">';
-        newElement = newElement + '<h4>' + d.nombre + '</h4>';
-        newElement = newElement + '<p>' + d.descripcion + '</p><br>';
-        newElement = newElement + '<h3 class="precio">$' + d.precio + '</h3>';
-        newElement = newElement + '<p class="sub_precio"><s>$10.000</s></p></div>';
-        newElement = newElement + '<div class="cont_btn_buy"> <a href="#">COMPRA AHORA</a></div></div></div>';
+    dataProductos.map((d, index) => {   
+        newElement = newElement + '<div key=' + index + ' class="tarjeta">';
+        newElement = newElement + '<img src="' + d.link + '" alt="">';
+        newElement = newElement + '<div class="tarjetaTextos">';
+        newElement = newElement + '<h3><strong>' + d.nombre + '</strong></h3>';
+        newElement = newElement + '<p>' + d.descripcion + '</p>';
+        newElement = newElement + '<p><strong>$ ' + d.precio + '</strong></p>';
+        newElement = newElement + '<button class="btnX">Agregar</button></div></div>';
     });
 
-    listaCarrusel.innerHTML = newElement;
+    listaProductos.innerHTML = newElement;
 }
 
 // -- Manejo de Navegacion - Render Links (Paltas) ---------------------------------
@@ -87,22 +86,6 @@ function btnMenu() {
         navBarBtn_click = true;
     }
 }
-
-// -- Reloj ------------------------------------------------------------------------
-// ---------------------------------------------------------------------------------
-function reloj() {
-    var hora = new Date;
-    var reloj = document.querySelector(".reloj");
-    var htmlHora = hora.getHours() + " h · " + hora.getMinutes() + " m · " + hora.getSeconds() + " s";
-
-    if (htmlHora != null) {
-        reloj.innerHTML = '<div>' + htmlHora + '</div>';
-    };
-};
-
-setInterval(() => {
-    reloj();
-}, 1000);
 
 // -- Manejo de Mensajeria ---------------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -159,20 +142,37 @@ function msge_Contacto() {
     return txt;
 }
 
-// ---------------------------------------------------------------------------------
+// -- Ocultar NavBar y Pie ---------------------------------------------------------
 // ---------------------------------------------------------------------------------
 let scrY = window.scrollY;
 
 window.addEventListener("scroll", () => {
-    let navBar = document.querySelector("header")
-
+    let navBar = document.querySelector(".navBar");
+    let pie = document.querySelector(".pie");
+    
     if (scrY < window.scrollY) {
-        navBar.classList.add("nav-oculto");
+        navBar.classList.add("navBar-ocultar");
+        pie.classList.add("pie-ocultar");
     } else {
-        navBar.classList.remove("nav-oculto");
+        navBar.classList.remove("navBar-ocultar");
+        pie.classList.remove("pie-ocultar");
     }
 
     scrY = window.scrollY;
 });
 
- 
+// -- Reloj ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+function reloj() {
+    var dt = new Date;
+    var addHora = document.querySelector(".pie");
+    var txtHora = dt.getHours() + " h · " + dt.getMinutes() + " m · " + dt.getSeconds() + " s";
+
+    if (txtHora != null) {
+        addHora.innerHTML = '<strong>' + txtHora + '</strong>';
+    };
+};
+
+setInterval(() => {
+    reloj();
+}, 1000);
