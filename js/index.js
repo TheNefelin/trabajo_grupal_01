@@ -31,7 +31,7 @@ function cargarComponente(id) {
     if (!navBarBtn_click) {
         btnMenu()
     }
-}
+};
 
 // -- Carga Productios en Tienda - Render Tarjetas ---------------------------------
 // ---------------------------------------------------------------------------------
@@ -39,18 +39,55 @@ function getProductos(){
     var listaProductos = document.querySelector(".tarjetaContenedor");
     var newElement = ""
 
-    dataProductos.map((d, index) => {   
+    dataProductos.map((d, index) => {
         newElement = newElement + `<div key=${index} class="tarjeta">`;
         newElement = newElement + `<img src="${d.link}" alt="">`;
         newElement = newElement + `<div class="tarjetaTextos">`;
         newElement = newElement + `<h3><strong>${d.nombre}</strong></h3>`;
         newElement = newElement + `<p>${d.descripcion}</p>`;
         newElement = newElement + `<p><strong>$ ${d.precio}</strong></p>`;
-        newElement = newElement + `<button class="btnX">Agregar</button></div></div>`;
+        newElement = newElement + `<button value=${d.id} class="btnX" onclick="addProducto_click(this)">Agregar</button></div></div>`;
     });
 
     listaProductos.innerHTML = newElement;
-}
+};
+
+const dataCanasta = [];
+
+function addProducto_click(elemento) {
+    let canasta = document.querySelector(".carrito-cont");
+
+    dataProductos.map((d) => {
+        if (d.id == elemento.value){
+            dataCanasta.push(d);
+        }
+    });
+
+    canasta.textContent = dataCanasta.length;
+
+    let addItem = document.querySelector("#addItem");
+    let newElement = "";
+
+    dataCanasta.map((d, index) => {
+        newElement = newElement + `<li>Precio: ${d.precio} Item: ${d.nombre}</li><hr>`;
+    });
+
+    addItem.innerHTML = newElement;
+};
+
+function canasta_click() {
+    let canasta = document.querySelector(".carrito-lista");
+    canasta.classList.add("carrito-lista_ocultar");
+};
+
+function canastaSalir_click() {
+    let canasta = document.querySelector(".carrito-lista");
+    canasta.classList.remove("carrito-lista_ocultar");
+};
+
+function carritoLista_vaciarPor(id) {
+
+};
 
 // -- Manejo de Navegacion - Render Links (Paltas) ---------------------------------
 // ---------------------------------------------------------------------------------
@@ -63,7 +100,7 @@ function getLinks() {
     });
 
     listaLinks.innerHTML = newElement;
-}
+};
 
 // -- Manejo btn Menu Hamburguesa --------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -86,7 +123,7 @@ function btnMenu() {
         navBarMenu.classList.remove("navBar-menu_accion");
         navBarBtn_click = true;
     }
-}
+};
 
 // -- Manejo de Mensajeria ---------------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -101,25 +138,25 @@ function msge(btn_clic) {
     }
 
     modal.innerHTML = msg;
-}
+};
 
 function msge_Encuesta() {
     let txtEncuesta = document.querySelector("#txtEncuesta");
     let txt = "";
 
-    $(txtEncuesta).css('border-color', 'black'); 
+    $(txtEncuesta).css('border-color', 'black');
 
     if (isNaN(txtEncuesta.value) || txtEncuesta.value == ''){
         txt = "Debe Ingresar una Valor Numérico";
-        $(txtEncuesta).css('border-color', 'red'); 
+        $(txtEncuesta).css('border-color', 'red');
     }else{
         if (txtEncuesta.value > 10) {
             txt = "El Valor Debe ser Entre 0 y 10";
-            $(txtEncuesta).css('border-color', 'red'); 
+            $(txtEncuesta).css('border-color', 'red');
         }else{
             txt = "Gracias por Darnos tu Opinión";
             txtEncuesta.value = "";
-        }       
+        }
     }
 
     return txt
@@ -129,17 +166,17 @@ function msge_Contacto() {
     let txtEmail = document.querySelector("#txtContactoEmail");
     let txtNombre = document.querySelector("#txtContactoNombre");
     let txt = "";
-    
-    $(txtEmail).css('border-color', 'black'); 
-    $(txtNombre).css('border-color', 'black'); 
+
+    $(txtEmail).css('border-color', 'black');
+    $(txtNombre).css('border-color', 'black');
 
     if (txtEmail.value == ""){
         txt = "Debe Ingresar un EMail";
-        $(txtEmail).css('border-color', 'red'); 
+        $(txtEmail).css('border-color', 'red');
     }else{
         if (txtNombre.value == "") {
             txt = "Debe Ingresar su Nombre";
-            $(txtNombre).css('border-color', 'red'); 
+            $(txtNombre).css('border-color', 'red');
         }else{
             txt = "Gracias por Contactarnos!!!";
             txtEmail.value = "";
@@ -148,7 +185,7 @@ function msge_Contacto() {
     }
 
     return txt;
-}
+};
 
 // -- Ocultar NavBar y Pie ---------------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -157,13 +194,16 @@ let scrY = window.scrollY;
 window.addEventListener("scroll", () => {
     let navBar = document.querySelector(".navBar");
     let pie = document.querySelector(".pie");
-    
+    let carrito = document.querySelector(".carrito");
+
     if (scrY < window.scrollY) {
         navBar.classList.add("navBar-ocultar");
         pie.classList.add("pie-ocultar");
+        carrito.classList.add("carrito-ocultar");
     } else {
         navBar.classList.remove("navBar-ocultar");
         pie.classList.remove("pie-ocultar");
+        carrito.classList.remove("carrito-ocultar");
     }
 
     scrY = window.scrollY;

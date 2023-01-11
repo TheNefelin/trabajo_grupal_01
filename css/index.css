@@ -134,6 +134,54 @@ header {
     text-shadow: none;
 }
 
+.carrito {
+    position: fixed;
+    top: 70%;
+    right: 0;
+    z-index: 20;
+    background-color: var(--colorCajaFondo);
+    color: var(--colorCajaTexto);
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+    transition: 0.5s ease-out;
+    cursor: pointer;
+}
+
+.carrito > * {
+    fill: white;
+    padding: 7px;
+    width: 80px;
+    font-size: 30px;
+}
+
+.carrito-ocultar {
+    right: -100px;
+}
+
+.carrito-lista {
+    background-color: var(--colorLink);
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    right: -50%;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 10px 20px;
+    transition: 0.5s ease-out;
+}
+
+.carrito-lista_ocultar{
+    right: 0;
+}
+
+.carrito-lista ul {
+    overflow-y: auto;
+    color: var(--colorCajaTexto);
+}
 
 /* MainContenedor ------------------------------------------------------------------ */
 /* --------------------------------------------------------------------------------- */

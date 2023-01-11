@@ -111,24 +111,6 @@ const dataLinks = [
     }
 ];
 
-const banner = [
-    {
-        oferta: "Todos los Calzados 150% de Descuento",
-        detalle: "AGOTADO",
-        link: "../img/Banner_01.jpg"
-    }
-    ,{
-        oferta: "21% De Descuento",
-        detalle: "Poleras",
-        link: "../img/Banner_02.jpg"
-    }
-    ,{
-        oferta: "12.3% de Desciuento",
-        detalle: "Trajes de Cosplay",
-        link: "../img/Banner_03.jpg"
-    }
-];
-
 const dataProductos = [
     {
         id: 1,
@@ -174,35 +156,35 @@ const dataProductos = [
     }
     ,    {
         id: 7,
-        nombre: "Polera Negra",
+        nombre: "Otra Negra",
         precio: 4990,
         descripcion: "Un manjar, siempre esta en oferta porque nadie la compra",
         link: "../img/ropa_07.jpg"
     }
     ,{
         id: 8,
-        nombre: "Polera Roja",
+        nombre: "Otra Roja",
         precio: 4990,
         descripcion: "mmm si, la polera es mas o menos... salva porque no se la comen los ratones",
         link: "../img/ropa_08.jpg"
     }
     ,{
         id: 9,
-        nombre: "Polera Blanca",
+        nombre: "Otra Blanca",
         precio: 4990,
         descripcion: "Esta polera hace que la gente se sienta limpia",
         link: "../img/ropa_09.jpg"
     }
     ,{
         id: 10,
-        nombre: "Akatsuki",
+        nombre: "Akat",
         precio: 25000,
         descripcion: "Si te gusta el Maruchan, este es tu outfit",
         link: "../img/ropa_10.jpg"
     }
     ,{
         id: 11,
-        nombre: "Cosplay Duende",
+        nombre: "Duende",
         precio: 2000,
         descripcion: "Verte riduculo nunca ha sido tan barato",
         link: "../img/ropa_11.jpg"
