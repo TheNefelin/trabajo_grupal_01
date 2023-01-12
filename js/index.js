@@ -217,7 +217,7 @@ window.addEventListener("scroll", () => {
 // ---------------------------------------------------------------------------------
 function reloj() {
     var dt = new Date;
-    var addHora = document.querySelector(".pie");
+    var addHora = document.querySelector(".reloj");
     var txtHora = dt.getHours() + " h · " + dt.getMinutes() + " m · " + dt.getSeconds() + " s";
 
     if (txtHora != null) {

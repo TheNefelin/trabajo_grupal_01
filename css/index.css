@@ -101,7 +101,7 @@ header {
     transition: border-color 0.66s ease-out, font-size 0.3s ease-out;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 800px) {
     .navBar-btn {
         display: block;
     }
@@ -274,7 +274,7 @@ header {
 }
 
 .tarjetaContenedor {
- 
+
     background-color: var(--colorContenedor);
     padding: 50px 0 50px 0;
     display: grid;
@@ -323,23 +323,21 @@ header {
 
 /* Footer -------------------------------------------------------------------------- */
 /* --------------------------------------------------------------------------------- */
-footer {
+.pie {
     position: fixed;
     bottom: 0;
     z-index: 10;
     width: 100%;
-}
-
-.pie {
     background-color: var(--colorFooter);
-    color: white;
+    color: var(--colorCajaTexto);
+    padding: 5px;
     text-align: center;
-    padding: 15px;
     transition: 0.5s ease-out;
 }
 
 .pie-ocultar {
     margin-bottom: -60px;
 }
+
 
 /* ------------------- */
